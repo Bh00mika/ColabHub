@@ -1,0 +1,25 @@
+#load libraries first
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+%matplotlib inline
+import seaborn as sns
+
+#Reading from Rosetta Raw Relax Score File in scores.csv "PS: Make sure you are in the correct directory"
+relaxed=pd.read_csv('./output/yourcagename/scores.csv', header=0, delim_whitespace=True)
+
+#Dropping the annoying SCORE column
+relaxed_scores=relaxed.drop(['SCORE:'],axis=1)
+relaxed_scores
+
+#Run this to get the lowest score
+relaxed_scores.total_score.min(axis=0)
+
+#Plot whatever if you wanna and save the figure
+plt.scatter(relaxed_scores['rmsd_asu'], relaxed_scores['total_score'], label='Score Vs RMSD', linestyle='-')
+plt.title('Score Vs RMSD')
+plt.xlabel('RMSD')
+plt.ylabel('Score')
+plt.legend(loc='best')
+plt.savefig('yourplotname.png')
+plt.show()
