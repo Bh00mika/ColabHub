@@ -15,6 +15,7 @@
 * load your output PDB file from AlphaFold. This file contains pLDDT scores in the b factor column.
 * type colbyplddt yourstructurename and hit enter
 * Voila! now your structure is coloured by plddt scores.
+* Alternatively you can type in command line:   ' spectrum b, red_yellow_green_cyan_blue, minimum=50, maximum=90 ' (without quotes) for fast visualisation of plddt
 
 ## Authors
 
